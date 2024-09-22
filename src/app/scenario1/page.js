@@ -1,10 +1,9 @@
-// src/app/page.js
 "use client";
 
 import React from "react";
 import { Box, Typography, Paper, Container } from "@mui/material";
-import OptionCalculatorForm from "../../components/OptionCalculator";
-export default function Home() {
+
+export default function Scenario1() {
   return (
     <Box sx={{ p: 3 }}>
       <Container maxWidth="md">
@@ -16,12 +15,12 @@ export default function Home() {
             align="center"
             sx={{ mb: 4, fontWeight: "bold", color: "primary.main" }}
           >
-            Option Price Calculator
+            Scenario 1
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, textAlign: "center" }}>
-            Calculate a fair price for Illiquid Strikes
+            Content for Scenario 1 goes here.
           </Typography>
-          <OptionCalculatorForm />
+          {/* Add your Scenario 1 specific content here */}
         </Paper>
       </Container>
     </Box>
