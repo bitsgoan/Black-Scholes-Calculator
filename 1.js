@@ -20,7 +20,6 @@ export default function Home() {
     stockPrice: 20000,
     strikePrice: 23000,
     daysLeft: 115,
-    riskFreeRate: 0.05,
     volatility: 0.207,
     optionType: "pe",
   });
@@ -89,18 +88,6 @@ export default function Home() {
           name="daysLeft"
           type="number"
           value={formData.daysLeft}
-          onChange={handleChange}
-        />
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="riskFreeRate"
-          label="Risk-Free Rate"
-          name="riskFreeRate"
-          type="number"
-          inputProps={{ step: 0.01 }}
-          value={formData.riskFreeRate}
           onChange={handleChange}
         />
         <TextField

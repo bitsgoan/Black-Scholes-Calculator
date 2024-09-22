@@ -3,21 +3,14 @@ import { blackScholes } from "./priceCalculator";
 
 export default function handler(req, res) {
   if (req.method === "POST") {
-    const {
-      stockPrice,
-      strikePrice,
-      daysLeft,
-      riskFreeRate,
-      volatility,
-      optionType,
-    } = req.body;
+    const { stockPrice, strikePrice, daysLeft, volatility, optionType } =
+      req.body;
 
     try {
       const price = blackScholes(
         parseFloat(stockPrice),
         parseFloat(strikePrice),
         parseFloat(daysLeft),
-        parseFloat(riskFreeRate),
         parseFloat(volatility),
         optionType
       );

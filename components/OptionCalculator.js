@@ -20,7 +20,6 @@ export default function OptionCalculatorForm() {
     stockPrice: 26000,
     strikePrice: 23000,
     daysLeft: 115,
-    riskFreeRate: 5,
     volatility: 20.7,
     optionType: "pe",
   });
@@ -35,7 +34,6 @@ export default function OptionCalculatorForm() {
     e.preventDefault();
     const submissionData = {
       ...formData,
-      riskFreeRate: formData.riskFreeRate / 100,
       volatility: formData.volatility / 100,
     };
     const response = await fetch("/api/calculate", {
@@ -94,18 +92,7 @@ export default function OptionCalculatorForm() {
         value={formData.daysLeft}
         onChange={handleChange}
       />
-      <TextField
-        margin="normal"
-        required
-        fullWidth
-        id="riskFreeRate"
-        label="Risk-Free Rate (%)"
-        name="riskFreeRate"
-        type="number"
-        inputProps={{ step: 0.1 }}
-        value={formData.riskFreeRate}
-        onChange={handleChange}
-      />
+
       <TextField
         margin="normal"
         required
@@ -141,7 +128,7 @@ export default function OptionCalculatorForm() {
 
       {result !== null && (
         <Typography variant="h6" component="p" gutterBottom>
-          Option Price: {result.toFixed(2)}
+          Option Price: {result.toFixed(1)}
         </Typography>
       )}
     </Box>

@@ -5,10 +5,10 @@ export function blackScholes(
   stockPrice,
   strikePrice,
   daysLeft,
-  riskFreeRate,
   volatility,
   optionType
 ) {
+  const riskFreeRate = 0.09;
   const timeToExpiration = daysLeft / 365.0;
 
   const d1 =
